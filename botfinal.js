@@ -1,5 +1,5 @@
 const TelegramBot = require("node-telegram-bot-api");
-const token = "1474067552:AAFey_F3tQyQINZmkK4_-oxB2lvs0XgCGmQ";
+const token = "1482047845:AAHUxw4Xt1SjwXdTv5hp4_0lMCArAkrHuOY";
 const bot = new TelegramBot(token, { polling: true });
 var jsdom = require("jsdom");
 const { JSDOM } = jsdom;
@@ -161,7 +161,7 @@ bot.on("callback_query", function onCallbackQuery(callbackQuery) {
         if (n <= a) {
             n++;
             text =
-
+                "Curso " +
                 f[n].nombre +
                 "\n" +
                 f[n].imagen +
@@ -177,7 +177,7 @@ bot.on("callback_query", function onCallbackQuery(callbackQuery) {
             bot.editMessageText(text, opts);
         } else {
             text =
-
+                "Curso " +
                 f[n].nombre +
                 "\n" +
                 f[n].imagen +
@@ -198,7 +198,7 @@ bot.on("callback_query", function onCallbackQuery(callbackQuery) {
         if (n >= 1) {
             n--;
             text =
-
+                "Curso " +
                 f[n].nombre +
                 "\n" +
                 f[n].imagen +
@@ -213,27 +213,14 @@ bot.on("callback_query", function onCallbackQuery(callbackQuery) {
                 f[n].links[2].url;
             bot.editMessageText(text, opts);
         } else {
-            text =
-                "Curso Inicial  " +
-                f[n].nombre +
-                "\n" +
-                f[n].imagen +
-                "\n" +
-                "Telegram:" +
-                f[n].links[0].url +
-                "\n" +
-                "Mega:" +
-                f[n].links[1].url +
-                "\n" +
-                "Google Drive:" +
-                f[n].links[2].url;
+            text = "Curso Inicial  " + f[n];
             bot.editMessageText(text, opts3);
         }
     }
     if (action === "page") {
         n++;
         text =
-
+            "Curso " +
             f[n].nombre +
             "\n" +
             f[n].imagen +
